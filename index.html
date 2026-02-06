@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Happy Rose Day</title>
+<style>
+    body {
+        margin: 0;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+        font-family: 'Segoe UI', sans-serif;
+    }
+
+    .card {
+        width: 350px;
+        height: 450px;
+        perspective: 1000px;
+    }
+
+    .inner {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        transition: transform 1s;
+        transform-style: preserve-3d;
+    }
+
+    .card.flip .inner {
+        transform: rotateY(180deg);
+    }
+
+    .front, .back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: white;
+        border-radius: 20px;
+        box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        backface-visibility: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 30px;
+        text-align: center;
+    }
+
+    .front h1 {
+        color: #d6336c;
+        margin-bottom: 10px;
+    }
+
+    .date {
+        font-size: 1.1em;
+        color: #555;
+        margin-bottom: 20px;
+    }
+
+    .rose {
+        font-size: 5em;
+        cursor: pointer;
+        animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.1); }
+        100% { transform: scale(1); }
+    }
+
+    .tap {
+        margin-top: 15px;
+        font-size: 0.9em;
+        color: #777;
+    }
+
+    .back {
+        transform: rotateY(180deg);
+    }
+
+    .back h2 {
+        color: #d6336c;
+        margin-bottom: 15px;
+    }
+
+    .message {
+        font-size: 1.2em;
+        color: #444;
+        line-height: 1.6;
+    }
+</style>
+</head>
+<body>
+
+<div class="card" id="card">
+    <div class="inner">
+        <!-- FRONT PAGE -->
+        <div class="front">
+            <h1>Happy Rose Day 🌹</h1>
+            <div class="date">7 February</div>
+            <div class="rose" onclick="flipCard()">🌹</div>
+            <div class="tap">Tap the rose</div>
+        </div>
+
+        <!-- BACK PAGE -->
+        <div class="back">
+            <h2>For You 💖</h2>
+            <div class="message">
+                Just like a rose,<br>
+                you add beauty and fragrance to my life.<br><br>
+                May this Rose Day fill your heart<br>
+                with love, smiles, and warmth.<br><br>
+                Happy Rose Day my love 🌹
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function flipCard() {
+        document.getElementById("card").classList.add("flip");
+    }
+</script>
+
+</body>
+</html>
