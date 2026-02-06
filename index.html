@@ -14,13 +14,12 @@
     justify-content: center;
     font-family: 'Segoe UI', sans-serif;
 
-    /* Fixed background - rose fits fully without cropping */
     background:
       linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
       url("https://images.unsplash.com/photo-1518895949257-7621c3c786d7?auto=format&fit=crop&w=800&q=70");
-    
-    background-size: contain;         /* fit full rose inside */
-    background-position: center top;  /* aligns flower head nicely */
+
+    background-size: cover;          /* fill entire screen */
+    background-position: center 30%; /* shift rose flower for better focus */
     background-repeat: no-repeat;
     background-attachment: fixed;
   }
